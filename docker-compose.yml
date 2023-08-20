@@ -1,0 +1,27 @@
+version: '3.8'
+
+volumes:
+    logs:
+        driver: local
+
+services:
+    slim:
+        image: php:7-alpine
+        working_dir: /var/www
+        command: php -S 0.0.0.0:8080 -t public
+        environment:
+            - docker=true
+            - ACCESS_KEY=amCJc3jNBzsYHGAxrp01
+            - SECRET_KEY=4IvMr1tJFQaA6pCqXlZuCmZP6Dj2W3UcYC1B0NHx
+            - ENDPOINT=http://minio:9000
+            - BUCKET=mybucket
+        ports:
+            - "8080:8080"
+        volumes:
+            - .:/var/www
+            - logs:/var/www/logs
+        networks:
+            - mynetwork
+networks:
+    mynetwork:
+        external: true

@@ -1,0 +1,1 @@
+Simple application to demonstrate uploading files to minIO bucket
