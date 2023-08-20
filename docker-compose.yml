@@ -11,10 +11,10 @@ services:
         command: php -S 0.0.0.0:8080 -t public
         environment:
             - docker=true
-            - ACCESS_KEY=amCJc3jNBzsYHGAxrp01
-            - SECRET_KEY=4IvMr1tJFQaA6pCqXlZuCmZP6Dj2W3UcYC1B0NHx
-            - ENDPOINT=http://minio:9000
-            - BUCKET=mybucket
+            - ACCESS_KEY='your-access-key'
+            - SECRET_KEY='your-secret-access-key'
+            - ENDPOINT='endpoint-url-of-minIO-server'
+            - BUCKET='bucket-name'
         ports:
             - "8080:8080"
         volumes:
